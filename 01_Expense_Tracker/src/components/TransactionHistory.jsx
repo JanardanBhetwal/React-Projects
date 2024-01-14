@@ -4,13 +4,15 @@ import GlobalContext from "../context/Diary";
 
 function TransactionHistory() {
   const { transactions } = useContext(GlobalContext);
+
   const renderedItems = transactions.map((transaction) => {
     return <TransactionList key={transaction.id} transaction={transaction} />;
   });
+
   return (
-    <div>
+    <div className="w-32">
       History
-      <div>
+      <div className="border border-solid">
         <div>{renderedItems}</div>
       </div>
     </div>

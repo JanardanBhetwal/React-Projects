@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const GlobalContext = createContext();
 
@@ -12,10 +12,43 @@ const initialData = [
 
 function Provider({ children }) {
   const [transactions, setTransactions] = useState(initialData);
+  const [income, setIncome] = useState(0);
+  const [expense, setExpense] = useState(0);
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    let inc = 0;
+    let exp = 0;
+
+    transactions.map((transaction) => {
+      let amt = transaction.amount;
+      if (amt >= 0) {
+        inc += parseInt(amt);
+      } else {
+        exp += parseInt(amt);
+      }
+    });
+
+    setIncome(inc);
+    setExpense(exp);
+    setBalance(inc + exp);
+  }, [transactions]);
+
+  const generateId = () => {
+    return parseInt(Math.random() * 1000);
+  };
 
   const addData = (text, amount) => {
-    const data = { id: 6, text: text, amount: amount };
+    const data = { id: generateId(), text: text, amount: amount };
     const updatedData = [...transactions, data];
+
+    setTransactions(updatedData);
+  };
+
+  const removeData = (id) => {
+    const updatedData = transactions.filter((transaction) => {
+      return transaction.id != id;
+    });
 
     setTransactions(updatedData);
   };
@@ -23,6 +56,10 @@ function Provider({ children }) {
   const valueToShare = {
     transactions,
     addData,
+    removeData,
+    income,
+    expense,
+    balance,
   };
 
   return (
