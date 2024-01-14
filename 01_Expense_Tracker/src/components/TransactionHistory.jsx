@@ -10,9 +10,9 @@ function TransactionHistory() {
   });
 
   return (
-    <div className="w-32">
-      History
-      <div className="border border-solid">
+    <div className="p-2 w-60  ">
+      <div className="border-b-2 border-gray-500 my-1 font-bold">History</div>
+      <div>
         <div>{renderedItems}</div>
       </div>
     </div>

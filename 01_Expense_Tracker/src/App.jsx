@@ -6,7 +6,7 @@ import AddTransaction from "./components/AddTransaction";
 
 function App() {
   return (
-    <div className="h-screen flex flex-col items-center font-sans justify-around ">
+    <div className="h-full flex flex-col items-center font-sans bg-gray-200 mx-auto">
       <Header />
       <Balance />
       <IncomeExpense />
