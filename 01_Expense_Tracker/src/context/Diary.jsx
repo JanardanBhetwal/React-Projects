@@ -51,10 +51,25 @@ function Provider({ children }) {
     setTransactions(updatedData);
   };
 
+  const editData = (id, newText, newAmount) => {
+    let newData = { id: id, text: newText, amount: newAmount };
+
+    const updatedData = transactions.map((transaction) => {
+      if (transaction.id === newData.id) {
+        return { ...transaction, ...newData };
+      }
+
+      return transaction;
+    });
+
+    setTransactions(updatedData);
+  };
+
   const valueToShare = {
     transactions,
     addData,
     removeData,
+    editData,
     income,
     expense,
     balance,
