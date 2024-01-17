@@ -2,11 +2,13 @@ import { createContext, useState, useEffect } from "react";
 
 const GlobalContext = createContext();
 
-const initialData = [
-  { id: 1, text: "Flower", amount: -20 },
-  { id: 2, text: "Salary", amount: 300 },
-  { id: 3, text: "Book", amount: -10 },
-];
+let initialData;
+const getData = localStorage.getItem("lists");
+if (getData) {
+  initialData = JSON.parse(getData);
+} else {
+  initialData = [];
+}
 
 function Provider({ children }) {
   const [transactions, setTransactions] = useState(initialData);
@@ -26,6 +28,8 @@ function Provider({ children }) {
         exp += parseInt(amt);
       }
     });
+
+    localStorage.setItem("lists", JSON.stringify(transactions));
 
     setIncome(inc);
     setExpense(exp);
