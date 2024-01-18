@@ -3,24 +3,24 @@ import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="fixed top-0">
-      <nav className="flex flex-row justify-between h-16 bg-green-200">
+    <header className="fixed top-0 w-full">
+      <nav className="flex flex-row justify-between h-12 bg-gray-400 font-mono text-2xl text-white font-bold">
         <div>
           <Link to="/">
-            <div className=" h-12 w-12 m-2 bg-red-200">
+            <div className=" h-10 w-10 m-1">
               <img
-                className=""
+                className="rounded-lg"
                 src="https://img.freepik.com/premium-photo/logo-letter-j-gold_7023-185158.jpg"
               />
             </div>
           </Link>
         </div>
-        <div>
-          <ul className="flex flex-row justify-evenly bg-orange-400 h-full w-96">
+        <div className="w-3/5">
+          <ul className="flex flex-row justify-evenly h-full m-auto items-center">
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "text-sky-500" : "text-rose-500"}`
+                  `${isActive ? "text-orange-500" : "text-white-500"}`
                 }
                 to="/"
               >
@@ -30,7 +30,7 @@ function Header() {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "text-sky-500" : "text-rose-500"}`
+                  `${isActive ? "text-orange-500" : "text-white-500"}`
                 }
                 to="/about"
               >
@@ -40,7 +40,7 @@ function Header() {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "text-sky-500" : "text-rose-500"}`
+                  `${isActive ? "text-orange-500" : "text-white-500"}`
                 }
                 to="/contact"
               >
@@ -50,7 +50,7 @@ function Header() {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "text-sky-500" : "text-rose-500"}`
+                  `${isActive ? "text-orange-500" : "text-white-500"}`
                 }
                 to="/github"
               >
@@ -61,7 +61,7 @@ function Header() {
         </div>
         <div>
           <Link to="/login">
-            <button className="bg-red-500">Log in</button>
+            <button className="bg-blue-500 rounded-md p-1 m-1">Log in</button>
           </Link>
         </div>
       </nav>
