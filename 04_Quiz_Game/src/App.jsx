@@ -1,7 +1,7 @@
 //
 
 function App() {
-  return <></>;
+  return <>Quiz App</>;
 }
 
 export default App;
