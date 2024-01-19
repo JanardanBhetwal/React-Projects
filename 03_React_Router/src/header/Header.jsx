@@ -4,10 +4,10 @@ import { Link, NavLink } from "react-router-dom";
 function Header() {
   return (
     <header className="fixed top-0 w-full">
-      <nav className="flex flex-row justify-between h-12 bg-gray-400 font-mono text-2xl text-white font-bold">
+      <nav className="flex flex-row justify-between h-12 bg-gray-400 m-1 p-px font-mono text-2xl text-white font-bold rounded-md">
         <div>
           <Link to="/">
-            <div className=" h-10 w-10 m-1">
+            <div className=" h-10 w-10 ml-4 my-1">
               <img
                 className="rounded-lg"
                 src="https://img.freepik.com/premium-photo/logo-letter-j-gold_7023-185158.jpg"
@@ -61,7 +61,9 @@ function Header() {
         </div>
         <div>
           <Link to="/login">
-            <button className="bg-blue-500 rounded-md p-1 m-1">Log in</button>
+            <button className="bg-blue-500 rounded-md p-2 mr-4 text-sm my-1">
+              Log in
+            </button>
           </Link>
         </div>
       </nav>
