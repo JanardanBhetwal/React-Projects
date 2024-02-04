@@ -5,10 +5,10 @@ import { addTodo } from "../features/todo/todoSlice";
 function AddTodo() {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch();
-    console.log(addTodo(input));
+    dispatch(addTodo(input));
     setInput("");
   };
 
