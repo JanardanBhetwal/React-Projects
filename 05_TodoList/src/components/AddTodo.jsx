@@ -19,9 +19,9 @@ function AddTodo() {
           type="text"
           onChange={(e) => setInput(e.target.value)}
           value={input}
-          className="border border-black"
+          className="border border-black rounded-md m-2"
         />
-        <button>Add</button>
+        <button className="bg-green-500 p-1 rounded-md m-2">Add</button>
       </form>
     </div>
   );
