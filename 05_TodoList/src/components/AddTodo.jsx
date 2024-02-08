@@ -13,15 +13,15 @@ function AddTodo() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="flex justify-evenly p-1 w-full ">
+      <form className="w-full flex justify-center" onSubmit={handleSubmit}>
         <input
           type="text"
           onChange={(e) => setInput(e.target.value)}
           value={input}
-          className="border border-black rounded-md m-2"
+          className="border w-3/4 border-black rounded-md m-2 pl-1  "
         />
-        <button className="bg-green-500 p-1 rounded-md m-2">Add</button>
+        <button className="bg-green-500 p-1 rounded-md m-2 w-16">Add</button>
       </form>
     </div>
   );
